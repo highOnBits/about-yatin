@@ -8,25 +8,17 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Alex Chen - Full Stack Developer",
-  description: "Creative portfolio showcasing innovative web development projects with 3D effects and modern design",
+  title: "Yatin Kumar - Sr. Software Engineer",
+  description: "Senior Software Engineer specializing in building impactful solutions through strong engineering, strategic thinking, and continuous learning. Expert in full-stack development and team leadership.",
   generator: "v0.app",
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
+        url: "/images/favicon.svg",
         type: "image/svg+xml",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: "/images/favicon.svg",
   },
 }
 

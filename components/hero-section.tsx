@@ -83,7 +83,7 @@ function Particles() {
   return (
     <points ref={meshRef}>
       <bufferGeometry>
-        <bufferAttribute attach="attributes-position" count={count} array={particles} itemSize={3} />
+        <bufferAttribute attach="attributes-position" count={count} array={particles} itemSize={3} args={[particles, 3]} />
       </bufferGeometry>
       <pointsMaterial size={0.012} color="#e8dcc8" transparent opacity={0.3} />
     </points>
@@ -92,26 +92,6 @@ function Particles() {
 
 export function HeroSection({ mousePosition }: HeroSectionProps) {
   const sectionRef = useRef<HTMLElement>(null)
-
-  // The parallax transform was moving the section up while content remained visible
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (sectionRef.current) {
-  //       const scrolled = window.scrollY
-  //       sectionRef.current.style.transform = `translateY(${scrolled * 0.5}px)`
-  //     }
-  //   }
-  //
-  //   if (typeof window !== "undefined") {
-  //     window.addEventListener("scroll", handleScroll)
-  //   }
-  //
-  //   return () => {
-  //     if (typeof window !== "undefined") {
-  //       window.removeEventListener("scroll", handleScroll)
-  //     }
-  //   }
-  // }, [])
 
   return (
     <section id="hero" ref={sectionRef} className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -148,6 +128,28 @@ export function HeroSection({ mousePosition }: HeroSectionProps) {
         }}
       >
         <div className="relative z-10 text-center px-4 max-w-5xl">
+          {/* Profile Photo - Uncomment to enable */}
+          {/* 
+          <div className="mb-8 animate-slide-up-fade animation-delay-200 flex justify-center">
+            <div className="relative group">
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white/30 backdrop-blur-sm bg-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] transition-all duration-300 group-hover:border-white/50 group-hover:shadow-[0_12px_40px_rgba(255,255,255,0.3)]">
+                <div
+                  className="absolute inset-0 pointer-events-none z-10 rounded-full"
+                  style={{
+                    boxShadow:
+                      "inset 2px 2px 4px 0px rgba(255, 255, 255, 0.4), inset -2px -2px 4px 0px rgba(255, 255, 255, 0.2)",
+                  }}
+                />
+                <img 
+                  src="/images/profile-photo.JPG" 
+                  alt="Yatin Kumar" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+          */}
+
           <div className="mb-6 animate-slide-up-fade animation-delay-300">
             <p
               className="text-sm md:text-base font-medium tracking-widest uppercase mb-4 text-slate-100"
@@ -156,7 +158,7 @@ export function HeroSection({ mousePosition }: HeroSectionProps) {
                   "0 0 20px rgba(0,0,0,0.9), 0 0 40px rgba(0,0,0,0.7), 0 4px 8px rgba(0,0,0,0.8), 0 0 60px rgba(255,255,255,0.3)",
               }}
             >
-              Software Developer & Creative Technologist
+              Senior Engineer, Full-Stack Developer, AI
             </p>
           </div>
 
@@ -179,22 +181,34 @@ export function HeroSection({ mousePosition }: HeroSectionProps) {
                 filter: "drop-shadow(0 0 20px rgba(255, 255, 255, 0.3))",
               }}
             >
-              Alex Chen
+              Yatin Kumar
             </span>
           </h1>
 
-          <p
-            className="text-xl md:text-3xl mb-12 max-w-3xl mx-auto leading-relaxed text-balance text-slate-50 font-medium animate-slide-up-fade animation-delay-700"
-            style={{
-              textShadow:
-                "0 0 20px rgba(0,0,0,0.95), 0 0 35px rgba(0,0,0,0.8), 0 3px 8px rgba(0,0,0,0.9), 0 0 50px rgba(255, 255, 255, 0.2)",
-            }}
-          >
-            Crafting exceptional digital experiences through innovative design and cutting-edge technology
-          </p>
+          <div className="mb-12 max-w-5xl mx-auto">
+            <p
+              className="text-lg md:text-xl leading-relaxed text-slate-200/90 font-light tracking-wide animate-text-reveal animation-delay-700"
+              style={{
+                textShadow:
+                  "0 0 15px rgba(0,0,0,0.7), 0 0 25px rgba(0,0,0,0.5), 0 2px 6px rgba(0,0,0,0.6)",
+              }}
+            >
+              Where strong engineering meets strategic thinking. Ownership drives impact. And,
+            </p>
+            <p
+              className="text-lg md:text-xl leading-relaxed text-slate-200/90 font-light tracking-wide animate-text-reveal animation-delay-2900"
+              style={{
+                textShadow:
+                  "0 0 15px rgba(0,0,0,0.7), 0 0 25px rgba(0,0,0,0.5), 0 2px 6px rgba(0,0,0,0.6)",
+              }}
+            >
+              continuous learning fuels better decisions
+            </p>
+          </div>
 
           <div className="flex gap-4 justify-center flex-wrap animate-slide-up-fade animation-delay-900">
-            <button className="relative group px-8 py-4 rounded-full bg-white/90 backdrop-blur-md text-black font-semibold transition-all duration-300 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] hover:bg-white hover:backdrop-blur-xl hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(255,255,255,0.4)] overflow-hidden">
+            <a href="#projects" className="scroll-smooth">
+            <button className="relative group px-8 py-4 rounded-full bg-white/90 backdrop-blur-md text-black font-semibold transition-all duration-300 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] hover:bg-white hover:backdrop-blur-xl hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(255,255,255,0.4)] overflow-hidden cursor-pointer">
               <div
                 className="absolute inset-0 pointer-events-none z-10 rounded-full"
                 style={{
@@ -221,7 +235,9 @@ export function HeroSection({ mousePosition }: HeroSectionProps) {
                 </svg>
               </span>
             </button>
-            <button className="relative group px-8 py-4 rounded-full border-2 border-white/80 backdrop-blur-md bg-white/5 text-white font-semibold transition-all duration-300 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] hover:border-white hover:bg-white/15 hover:backdrop-blur-xl hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(255,255,255,0.2)] overflow-hidden">
+            </a>
+            <a href="#contact" className="scroll-smooth">
+            <button className="relative group px-8 py-4 rounded-full border-2 border-white/80 backdrop-blur-md bg-white/5 text-white font-semibold transition-all duration-300 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] hover:border-white hover:bg-white/15 hover:backdrop-blur-xl hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(255,255,255,0.2)] overflow-hidden cursor-pointer">
               <div
                 className="absolute inset-0 pointer-events-none z-10 rounded-full"
                 style={{
@@ -253,6 +269,7 @@ export function HeroSection({ mousePosition }: HeroSectionProps) {
                 </svg>
               </span>
             </button>
+            </a>
           </div>
         </div>
       </div>
