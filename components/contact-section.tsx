@@ -53,10 +53,15 @@ export function ContactSection() {
   const onSubmit = async (data: ContactFormData) => {
     setFormStatus("submitting")
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://formsubmit.co/ajax/yatin.kumar5284@gmail.com", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          message: data.message,
+          _subject: `Portfolio Message from ${data.name}`,
+        }),
       })
       if (!res.ok) throw new Error()
       setFormStatus("success")
