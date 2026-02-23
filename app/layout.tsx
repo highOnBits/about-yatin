@@ -10,7 +10,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Yatin Kumar - Sr. Software Engineer",
   description: "Senior Software Engineer specializing in building impactful solutions through strong engineering, strategic thinking, and continuous learning. Expert in full-stack development and team leadership.",
-  generator: "v0.app",
+  generator: "Next.js",
   icons: {
     icon: [
       {
