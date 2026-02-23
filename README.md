@@ -2,7 +2,7 @@
 
 Personal portfolio site built with Next.js, Three.js, and Tailwind CSS.
 
-**Live:** [https://highonbits.github.io/personal-portfolio/](https://highonbits.github.io/personal-portfolio/)
+**Live:** [https://highonbits.github.io/about-yatin/](https://highonbits.github.io/about-yatin/)
 
 ## Tech Stack
 
