@@ -1,30 +1,12 @@
-# Creative developer portfolio
+# Personal Portfolio — Yatin Kumar
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+Personal portfolio site built with Next.js, Three.js, and Tailwind CSS.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/yatinkumar5284-9478s-projects/v0-portfolio)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/r97lxbjKe0U)
+**Live:** [https://highonbits.github.io/personal-portfolio/](https://highonbits.github.io/personal-portfolio/)
 
-## Overview
+## Tech Stack
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
-
-## Deployment
-
-Your project is live at:
-
-**[https://vercel.com/yatinkumar5284-9478s-projects/v0-portfolio](https://vercel.com/yatinkumar5284-9478s-projects/v0-portfolio)**
-
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.app/chat/r97lxbjKe0U](https://v0.app/chat/r97lxbjKe0U)**
-
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+- **Framework:** Next.js 16 (App Router, Static Export)
+- **3D:** Three.js, @react-three/fiber, @react-three/drei
+- **Styling:** Tailwind CSS 4, Glassmorphism
+- **Deployment:** GitHub Pages via GitHub Actions
