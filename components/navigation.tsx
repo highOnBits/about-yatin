@@ -13,16 +13,22 @@ const navItems: { name: string; href: string; icon: LucideIcon }[] = [
 ]
 
 export function Navigation() {
-  const [isMobile, setIsMobile] = useState(false)
-  const [isCollapsed, setIsCollapsed] = useState(false)
+  const [isMobile, setIsMobile] = useState(true)
+  const [isCollapsed, setIsCollapsed] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     if (typeof window === "undefined") return
 
-    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    const checkMobile = () => {
+      const mobile = window.innerWidth < 768
+      setIsMobile(mobile)
+      if (mobile) setIsCollapsed(true)
+    }
     checkMobile()
+    setMounted(true)
     window.addEventListener("resize", checkMobile)
 
     const handleScroll = () => {
@@ -70,12 +76,12 @@ export function Navigation() {
     <>
       {/* Morphing Navigation Bar */}
       <nav
-        className={`fixed top-4 z-40 transition-all duration-700 ease-in-out ${
+        className={`fixed top-4 z-40 ${mounted ? "transition-all duration-700 ease-in-out" : ""} ${
           isCollapsed ? "left-4" : "left-1/2 -translate-x-1/2"
         }`}
       >
         <div 
-          className={`relative flex items-center rounded-full glass-base glass-hover overflow-hidden transition-all duration-700 ease-in-out ${
+          className={`relative flex items-center rounded-full glass-base glass-hover overflow-hidden ${mounted ? "transition-all duration-700 ease-in-out" : ""} ${
             isCollapsed 
               ? "gap-0 px-3 py-3 w-12 h-12" 
               : "gap-2 px-6 py-3 w-auto"

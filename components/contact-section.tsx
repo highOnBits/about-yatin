@@ -231,8 +231,8 @@ export function ContactSection() {
                             "inset 1px 1px 2px 0 rgba(255, 255, 255, 0.4), inset -2px -2px 3px 2px rgba(255, 255, 255, 0.2)",
                         }}
                       />
-                      <link.icon className="relative z-20 w-5 h-5 transition-transform duration-200 group-hover:scale-115 group-hover:rotate-12" />
-                      <span className="relative z-20 ml-2" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}>
+                      <link.icon className="relative z-20 w-4 h-4 transition-transform duration-200 group-hover:scale-115 group-hover:rotate-12" />
+                      <span className="relative z-20 ml-1.5" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}>
                         {link.name}
                       </span>
                     </a>
@@ -268,6 +268,7 @@ export function ContactSection() {
 
                 <div>
                   <textarea
+                    id="contact-message"
                     {...register("message")}
                     placeholder="Your Message"
                     rows={4}

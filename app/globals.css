@@ -5,6 +5,7 @@
 
 html {
   scroll-behavior: smooth;
+  overscroll-behavior: none;
 }
 
 :root {
@@ -296,5 +297,13 @@ html {
   .glass-hover:hover {
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }

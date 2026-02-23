@@ -401,7 +401,7 @@ export function ExperienceSection() {
 
       {selectedExperience && (
         <div
-          className="fixed inset-0 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200"
+          className="fixed inset-0 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-300"
           style={{ background: "linear-gradient(135deg, rgba(0,0,0,0.82) 0%, rgba(15,10,30,0.78) 50%, rgba(0,0,0,0.82) 100%)" }}
           onClick={() => setSelectedExperience(null)}
           role="dialog"
@@ -410,7 +410,7 @@ export function ExperienceSection() {
           aria-describedby="modal-description"
         >
           <div
-            className="relative max-w-2xl w-full max-h-[80vh] overflow-hidden border-2 border-white/20 backdrop-blur-[2px] bg-white/5 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] animate-in zoom-in-95 duration-200 slide-in-from-bottom-4"
+            className="relative max-w-2xl w-full max-h-[80vh] overflow-hidden border-2 border-white/20 backdrop-blur-[2px] bg-white/5 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] animate-in zoom-in-95 duration-300 slide-in-from-bottom-6"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Glass corner highlights */}

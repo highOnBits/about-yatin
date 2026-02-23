@@ -115,28 +115,23 @@ const projects: Project[] = [
   },
 ]
 
-function InspirationBulb() {
-  const [isHovered, setIsHovered] = useState(false)
-
+function InspirationBulb({ isActive }: { isActive: boolean }) {
   const rays = [0, 45, 90, 135, 180, 225, 270, 315]
 
   return (
-    <div
-      className="relative cursor-pointer p-2"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <div className="relative cursor-pointer p-2">
+
       {rays.map((angle) => (
         <div
           key={angle}
           className="absolute left-1/2 top-1/2 transition-all duration-500 ease-out"
           style={{
             width: "1px",
-            height: isHovered ? "14px" : "6px",
-            background: `linear-gradient(to top, rgba(251,191,36,${isHovered ? 0.8 : 0.3}), transparent)`,
-            transform: `translate(-50%, -50%) rotate(${angle}deg) translateY(${isHovered ? -14 : -10}px)`,
-            opacity: isHovered ? 1 : 0.4,
-            filter: isHovered ? "blur(0.3px)" : "none",
+            height: isActive ? "14px" : "6px",
+            background: `linear-gradient(to top, rgba(251,191,36,${isActive ? 0.8 : 0.3}), transparent)`,
+            transform: `translate(-50%, -50%) rotate(${angle}deg) translateY(${isActive ? -14 : -10}px)`,
+            opacity: isActive ? 1 : 0.4,
+            filter: isActive ? "blur(0.3px)" : "none",
           }}
         />
       ))}
@@ -145,18 +140,18 @@ function InspirationBulb() {
         className="absolute inset-[-12px] rounded-full transition-opacity duration-500"
         style={{
           background: "radial-gradient(circle, rgba(251,191,36,0.15) 0%, transparent 70%)",
-          opacity: isHovered ? 1 : 0,
+          opacity: isActive ? 1 : 0,
         }}
       />
 
       <Lightbulb
         className="w-[22px] h-[22px] relative z-10 transition-all duration-300"
         style={{
-          color: isHovered ? "rgba(251,191,36,1)" : "rgba(251,191,36,0.55)",
-          filter: isHovered
+          color: isActive ? "rgba(251,191,36,1)" : "rgba(251,191,36,0.55)",
+          filter: isActive
             ? "drop-shadow(0 0 4px rgba(251,191,36,0.8)) drop-shadow(0 0 10px rgba(251,191,36,0.4)) drop-shadow(0 0 20px rgba(251,191,36,0.2))"
             : "drop-shadow(0 0 2px rgba(251,191,36,0.25))",
-          transform: isHovered ? "scale(1.1)" : "scale(1)",
+          transform: isActive ? "scale(1.1)" : "scale(1)",
         }}
       />
     </div>
@@ -254,14 +249,14 @@ export function ProjectsSection() {
           Side projects where curiosity meets code — each one born from a real problem I wanted to solve
         </p>
 
-        <div className="grid md:grid-cols-2 gap-4 md:gap-8">
+        <div className="flex md:grid md:grid-cols-2 gap-4 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide">
           {projects.map((project, index) => (
             <Card
               key={project.title}
               ref={(el) => {
                 projectRefs.current[index] = el
               }}
-              className={`group relative overflow-hidden backdrop-blur-[6px] bg-white/5 border-2 border-white/20 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(255,255,255,0.2)] transition-all duration-300 ${
+              className={`group relative min-w-[80vw] md:min-w-0 snap-center flex-shrink-0 md:flex-shrink overflow-hidden backdrop-blur-[6px] bg-white/5 border-2 border-white/20 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(255,255,255,0.2)] transition-all duration-300 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
@@ -327,7 +322,7 @@ export function ProjectsSection() {
                       setActiveInspiration(activeInspiration === index ? null : index)
                     }}
                   >
-                    <InspirationBulb />
+                    <InspirationBulb isActive={activeInspiration === index} />
 
                     <div className={`absolute right-0 top-full mt-2 w-72 ${activeInspiration === index ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"} transition-all duration-200 origin-top-right z-50`}>
                       <div className="relative backdrop-blur-2xl bg-black/90 border border-white/20 rounded-xl p-4 shadow-[0_8px_32px_0_rgba(0,0,0,0.7)]">
@@ -410,7 +405,7 @@ export function ProjectsSection() {
 
       {selectedProject && (
         <div
-          className="fixed inset-0 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200"
+          className="fixed inset-0 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-300"
           style={{ background: "linear-gradient(135deg, rgba(0,0,0,0.82) 0%, rgba(15,10,30,0.78) 50%, rgba(0,0,0,0.82) 100%)" }}
           onClick={() => setSelectedProject(null)}
           role="dialog"
@@ -418,7 +413,7 @@ export function ProjectsSection() {
           aria-labelledby="project-modal-title"
         >
           <div
-            className="relative max-w-2xl w-full max-h-[85vh] overflow-hidden border-2 border-white/20 backdrop-blur-[2px] bg-white/5 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] animate-in zoom-in-95 duration-200 slide-in-from-bottom-4"
+            className="relative max-w-2xl w-full max-h-[85vh] overflow-hidden border-2 border-white/20 backdrop-blur-[2px] bg-white/5 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] animate-in zoom-in-95 duration-300 slide-in-from-bottom-6"
             onClick={(e) => e.stopPropagation()}
           >
             <div

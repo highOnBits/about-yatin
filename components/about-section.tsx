@@ -10,13 +10,9 @@ export function AboutSection() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        } else {
-          setIsVisible(false)
-        }
+        setIsVisible(entry.isIntersecting)
       },
-      { threshold: 0.2 },
+      { threshold: 0.05 },
     )
 
     const currentRef = sectionRef.current
@@ -66,10 +62,10 @@ export function AboutSection() {
           <span className="text-white">Who I Am</span>
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-4 md:gap-8">
+        <div className="flex md:grid md:grid-cols-2 gap-4 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide">
           <Card
             ref={card1Ref}
-            className={`relative border-2 border-white/20 backdrop-blur-[2px] bg-white/5 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] transition-all duration-300 hover:border-white/30 hover:bg-white/10 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(255,255,255,0.2)] overflow-hidden ${
+            className={`relative min-w-[80vw] md:min-w-0 snap-center border-2 border-white/20 backdrop-blur-[2px] bg-white/5 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] transition-all duration-300 hover:border-white/30 hover:bg-white/10 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(255,255,255,0.2)] overflow-hidden flex-shrink-0 md:flex-shrink ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"
             }`}
           >
@@ -133,7 +129,7 @@ export function AboutSection() {
 
           <Card
             ref={card2Ref}
-            className={`relative border-2 border-white/20 backdrop-blur-[2px] bg-white/5 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] transition-all duration-300 hover:border-white/30 hover:bg-white/10 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(255,255,255,0.2)] overflow-hidden ${
+            className={`relative min-w-[80vw] md:min-w-0 snap-center border-2 border-white/20 backdrop-blur-[2px] bg-white/5 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] transition-all duration-300 hover:border-white/30 hover:bg-white/10 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(255,255,255,0.2)] overflow-hidden flex-shrink-0 md:flex-shrink ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"
             }`}
           >
@@ -197,7 +193,7 @@ export function AboutSection() {
 
           <Card
             ref={card3Ref}
-            className={`relative border-2 border-white/20 backdrop-blur-[2px] bg-white/5 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] transition-all duration-300 hover:border-white/30 hover:bg-white/10 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(255,255,255,0.2)] overflow-hidden ${
+            className={`relative min-w-[80vw] md:min-w-0 snap-center border-2 border-white/20 backdrop-blur-[2px] bg-white/5 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] transition-all duration-300 hover:border-white/30 hover:bg-white/10 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(255,255,255,0.2)] overflow-hidden flex-shrink-0 md:flex-shrink ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"
             }`}
           >
@@ -261,7 +257,7 @@ export function AboutSection() {
 
           <Card
             ref={card4Ref}
-            className={`relative border-2 border-white/20 backdrop-blur-[2px] bg-white/5 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] transition-all duration-300 hover:border-white/30 hover:bg-white/10 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(255,255,255,0.2)] overflow-hidden ${
+            className={`relative min-w-[80vw] md:min-w-0 snap-center border-2 border-white/20 backdrop-blur-[2px] bg-white/5 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] transition-all duration-300 hover:border-white/30 hover:bg-white/10 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(255,255,255,0.2)] overflow-hidden flex-shrink-0 md:flex-shrink ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"
             }`}
           >

@@ -116,11 +116,11 @@ export function SkillsSection() {
         A comprehensive toolkit of modern technologies and frameworks I work with
       </p>
 
-      <div className="w-full max-w-6xl relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+      <div className="w-full max-w-6xl relative z-10 flex md:grid md:grid-cols-2 gap-4 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide">
         {skillCategories.map((category, categoryIndex) => (
           <div
             key={category.title}
-            className={`group/card relative backdrop-blur-[2px] bg-white/5 border-2 border-white/20 rounded-2xl overflow-hidden transition-all duration-600 hover:bg-white/10 hover:border-white/30 hover:-translate-y-1 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] hover:shadow-[0_12px_40px_rgba(255,255,255,0.2)] ${
+            className={`group/card relative min-w-[75vw] md:min-w-0 snap-center flex-shrink-0 md:flex-shrink backdrop-blur-[2px] bg-white/5 border-2 border-white/20 rounded-2xl overflow-hidden transition-all duration-600 hover:bg-white/10 hover:border-white/30 hover:-translate-y-1 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] hover:shadow-[0_12px_40px_rgba(255,255,255,0.2)] ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
             }`}
             style={{ transitionDelay: `${categoryIndex * 100}ms` }}

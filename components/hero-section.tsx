@@ -144,7 +144,7 @@ function AnimatedText({ text, delay = 0, charDelay = 15 }: { text: string; delay
 
 export function HeroSection({ heroNameRef }: HeroSectionProps) {
   const sectionRef = useRef<HTMLElement>(null)
-  const [isInView, setIsInView] = useState(false)
+  const [isInView, setIsInView] = useState(true)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -296,7 +296,15 @@ export function HeroSection({ heroNameRef }: HeroSectionProps) {
               </span>
             </button>
             </a>
-            <a href="#contact" className="scroll-smooth">
+            <a
+              href="#contact"
+              className="scroll-smooth"
+              onClick={() => {
+                setTimeout(() => {
+                  document.getElementById("contact-message")?.focus()
+                }, 800)
+              }}
+            >
             <button className="relative group px-5 py-3 md:px-8 md:py-4 rounded-full border md:border-2 border-white/80 backdrop-blur-md bg-white/5 text-white text-sm md:text-base font-semibold transition-all duration-300 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] hover:border-white hover:bg-white/15 hover:backdrop-blur-xl hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(255,255,255,0.2)] overflow-hidden cursor-pointer">
               <div
                 className="absolute inset-0 pointer-events-none z-10 rounded-full"
