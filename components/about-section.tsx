@@ -42,7 +42,7 @@ export function AboutSection() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-700"
           style={{
-            backgroundImage: "url('/images/about-bg.jpg')",
+            backgroundImage: `url('${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/about-bg.jpg')`,
             maskImage: "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
             WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
             filter: "blur(1px)",

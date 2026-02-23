@@ -229,7 +229,7 @@ export function ProjectsSection() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-700"
           style={{
-            backgroundImage: "url('/images/projects-bg.jpg')",
+            backgroundImage: `url('${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/projects-bg.jpg')`,
             maskImage: "linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)",
             WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)",
             filter: "blur(1px)",

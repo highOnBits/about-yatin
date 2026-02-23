@@ -172,7 +172,7 @@ export function ExperienceSection() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/images/experience-bg.jpg')",
+            backgroundImage: `url('${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/experience-bg.jpg')`,
             maskImage: "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
             WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
             filter: "blur(2px)",

@@ -113,7 +113,7 @@ export function ContactSection() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-700"
           style={{
-            backgroundImage: "url('/images/contact-bg.jpg')",
+            backgroundImage: `url('${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/contact-bg.jpg')`,
             maskImage: "linear-gradient(to bottom, transparent 0%, black 20%, black 100%)",
             WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 20%, black 100%)",
             filter: "blur(1px)", // Reduced blur from blur-sm to 1px for very subtle effect

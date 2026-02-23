@@ -162,7 +162,7 @@ export function HeroSection({ heroNameRef }: HeroSectionProps) {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/images/hero-bg.jpg')",
+            backgroundImage: `url('${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/hero-bg.jpg')`,
             maskImage: "linear-gradient(to bottom, black 50%, transparent 100%)",
             WebkitMaskImage: "linear-gradient(to bottom, black 50%, transparent 100%)",
             filter: "blur(1px)",
