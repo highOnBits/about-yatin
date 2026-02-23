@@ -18,23 +18,28 @@ export function ScrollProgress() {
   }, [])
 
   return (
-    <div className="fixed top-0 left-0 right-0 h-1.5 bg-black/30 backdrop-blur-sm z-50 border-b border-white/10">
+    <div className="fixed top-0 left-0 right-0 h-[5px] bg-transparent z-50">
       <div
-        className="h-full relative bg-white/10 backdrop-blur-md border-r-2 border-white/40"
-        style={{ width: `${progress}%`, transition: "none" }}
+        className="h-full relative"
+        style={{
+          width: `${progress}%`,
+          transition: "none",
+          background: "transparent",
+          borderTop: "1.5px solid rgba(255,255,255,0.5)",
+          borderBottom: "1.5px solid rgba(255,255,255,0.3)",
+        }}
       >
-        {/* Primary shine layer for glass reflection */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            boxShadow: "inset 0 1px 0 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 0 rgba(255, 255, 255, 0.15)",
+            boxShadow: "0 0 6px 1px rgba(255,255,255,0.2), inset 0 0 4px rgba(255,255,255,0.05)",
           }}
         />
-        {/* Outer glow effect */}
         <div
-          className="absolute inset-0 pointer-events-none"
+          className="absolute right-0 top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full pointer-events-none -translate-x-[-50%]"
           style={{
-            boxShadow: "0 0 20px 2px rgba(255, 255, 255, 0.4), 0 0 40px 4px rgba(255, 255, 255, 0.15)",
+            background: "radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 40%, transparent 70%)",
+            boxShadow: "0 0 6px 2px rgba(255,255,255,0.5), 0 0 14px 4px rgba(255,255,255,0.2), 0 0 24px 6px rgba(255,255,255,0.1)",
           }}
         />
       </div>

@@ -14,112 +14,71 @@ interface ExperienceItem {
   side: "left" | "right"
 }
 
+// Experience data array with work and education items
+// Note: Items are ordered chronologically from newest to oldest
+// The 'side' property determines timeline positioning (left for work, right for education)
 const experiences: ExperienceItem[] = [
   {
     id: 5,
     title: "Senior Software Developer",
-    organization: "Leading Tech Corporation",
-    period: "July 2024 - Present",
+    organization: "Aptean · Alpharetta, GA",
+    period: "July 2024 – Present",
     type: "work",
     side: "left",
-    description: "Leading development of enterprise-scale applications and mentoring engineering teams.",
+    description:
+      "On Aptean's Platform team, defining shared AI infrastructure and tooling standards that accelerate development across 70+ enterprise products.",
     details: [
-      "Lead architect for mission-critical enterprise applications",
-      "Manage team of 8 engineers across multiple projects",
-      "Design and implement scalable cloud infrastructure on AWS",
-      "Drive technical strategy and architectural decisions",
-      "Reduced system latency by 70% through optimization initiatives",
-      "Implemented advanced security measures and compliance standards",
-      "Mentor junior and mid-level developers",
-      "Collaborate with product and design teams on feature roadmaps",
-      "Establish engineering best practices and coding standards",
-      "Present quarterly technical reviews to executive leadership",
-      "Drive innovation through POCs and technology evaluations",
-      "Champion DevOps culture and continuous improvement initiatives",
+      "Established Intelligence Studio, a LangChain-based AI workflow orchestration platform enabling non-technical users to build enterprise-integrated AI automations; led the organization's foundational AI layer and accelerated cross-product AI adoption",
+      "Designed and developed Digital Co-Workers, an autonomous multi-agent platform built on Python, Azure OpenAI, and Claude Code, with persistent memory, feedback-loop, and Human-in-the-Loop controls; adopted by 25+ PMs and executives, reducing manual effort by ~35%",
+      "Built BuildEngine, a distributed AI-powered SDLC automation system converting natural-language requirements into production-ready code, automated testing via Claude-in-Chrome, review, merge, and deployment; automated ~67% of workflows, reducing delivery time by ~40%",
+      "Led Aptean Drive, a multi-tenant RBAC-enforced document and RAG platform indexing 10M+ files; reduced storage costs by 70–80% and improved discovery speed 50%",
+      "Owned full SDLC — architecture, IaC (Terraform), CI/CD (GitHub Actions), observability — achieving sub-5-min blue/green deployments with zero downtime",
     ],
   },
   {
     id: 4,
-    title: "Master of Science in Computer Science",
-    organization: "Oregon State University",
-    period: "2022 - 2024",
+    title: "MS in Computer Science",
+    organization: "Oregon State University · Corvallis, OR",
+    period: "Sept 2022 – June 2024",
     type: "education",
     side: "right",
-    description: "Advanced studies in artificial intelligence, machine learning, and distributed systems.",
+    description: "Graduate studies in computer science with a CGPA of 3.80/4.0.",
     details: [
-      "Specialized in Machine Learning and Artificial Intelligence",
-      "Completed thesis on deep learning applications in computer vision",
-      "GPA 3.9/4.0 with focus on advanced algorithms and theory",
-      "Research assistant working on neural network optimization",
-      "Published 2 papers in peer-reviewed conferences",
-      "Collaborated with industry partners on real-world AI projects",
-      "Completed coursework in Cloud Computing and Big Data",
-      "Presented research findings at international conferences",
-      "Received Graduate Research Fellowship",
-      "Contributed to cutting-edge research in NLP and computer vision",
+      "CGPA: 3.80 / 4.0",
+      "Graduate Research & Teaching Assistant (May 2023 – June 2024)",
+      "Mentored 120+ students in Software Engineering, running intensive Git, TDD, and CI/CD labs that equipped them with industry-ready skills",
+      "Co-developed a thermoelectric system converting industrial waste heat to electricity; prototype achieved 5% energy-recapture efficiency",
+      "Coursework in Distributed Systems, Machine Learning, Cloud Computing, and Advanced Algorithms",
     ],
   },
   {
     id: 3,
     title: "Software Developer",
-    organization: "Innovation Labs",
-    period: "2021 - 2022",
+    organization: "Aptean · Bengaluru, India",
+    period: "March 2019 – July 2022",
     type: "work",
     side: "left",
-    description: "Led development of scalable microservices and cloud-based solutions.",
+    description:
+      "Full-stack development on enterprise banking and compliance products, with a focus on microservices, DevOps, and Agile delivery.",
     details: [
-      "Architected and implemented microservices using Node.js and Docker",
-      "Designed and optimized database schemas for high-traffic applications",
-      "Implemented CI/CD pipelines using Jenkins and GitHub Actions",
-      "Led team of 3 developers in delivering critical features",
-      "Migrated legacy monolithic application to microservices architecture",
-      "Reduced deployment time by 60% through automation",
-      "Implemented comprehensive monitoring and logging solutions",
-      "Conducted technical interviews and evaluated candidates",
-      "Presented technical solutions to stakeholders and leadership",
-      "Contributed to open-source projects and community initiatives",
-    ],
-  },
-  {
-    id: 2,
-    title: "Associate Software Developer",
-    organization: "Tech Company Inc.",
-    period: "2019 - 2021",
-    type: "work",
-    side: "left",
-    description: "Developed and maintained web applications using modern JavaScript frameworks.",
-    details: [
-      "Built responsive web applications using React and TypeScript",
-      "Collaborated with cross-functional teams to deliver features",
-      "Implemented RESTful APIs and integrated third-party services",
-      "Participated in code reviews and maintained coding standards",
-      "Optimized application performance and reduced load times by 40%",
-      "Worked closely with designers to implement pixel-perfect UIs",
-      "Wrote comprehensive unit and integration tests",
-      "Contributed to technical documentation and best practices",
-      "Mentored junior developers and conducted knowledge sharing sessions",
-      "Participated in agile development processes and sprint planning",
+      "Expanded global-bank customer base 6% by shipping new complaint-management modules and an SMS microservice (Twilio API on AWS)",
+      "Scrum Master in an Agile environment for a 14-member team; velocity increased 30% in 3 quarters",
+      "Built and maintained RESTful APIs and microservices on C# / .NET and Python",
+      "Collaborated cross-functionally with product, QA, and design teams to deliver features on schedule",
     ],
   },
   {
     id: 1,
-    title: "Bachelor of Science in Computer Science",
-    organization: "University Name",
-    period: "2016 - 2020",
+    title: "BE in Computer Science",
+    organization: "Chitkara University · India",
+    period: "Aug 2016 – June 2020",
     type: "education",
     side: "right",
-    description: "Foundation in computer science principles, algorithms, and software engineering.",
+    description: "Undergraduate studies in computer science with a CGPA of 8.80/10.",
     details: [
-      "Graduated with honors, GPA 3.8/4.0",
-      "Completed coursework in Data Structures, Algorithms, and System Design",
-      "Led senior capstone project on distributed systems",
-      "Teaching Assistant for Introduction to Programming",
-      "Member of ACM and Computer Science Society",
-      "Participated in multiple hackathons and coding competitions",
-      "Completed research project on machine learning applications",
-      "Received Dean's List recognition for 6 consecutive semesters",
-      "Collaborated on cross-functional team projects",
-      "Published paper on algorithm optimization techniques",
+      "CGPA: 8.80 / 10",
+      "Strong foundation in Data Structures, Algorithms, System Design, and Software Engineering",
+      "Participated in competitive programming and hackathons",
     ],
   },
 ]
@@ -129,15 +88,19 @@ export function ExperienceSection() {
   const [isVisible, setIsVisible] = useState(false)
   const [selectedExperience, setSelectedExperience] = useState<ExperienceItem | null>(null)
   const [cardVisibility, setCardVisibility] = useState<boolean[]>(experiences.map(() => false))
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true)
+        } else {
+          setIsVisible(false)
+          setCardVisibility(experiences.map(() => false))
         }
       },
-      { threshold: 0.2 },
+      { threshold: 0.1 },
     )
 
     const currentRef = sectionRef.current
@@ -152,20 +115,41 @@ export function ExperienceSection() {
     }
   }, [])
 
+  // Handle escape key to close modal
+  useEffect(() => {
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && selectedExperience) {
+        setSelectedExperience(null)
+      }
+    }
+
+    if (selectedExperience) {
+      document.addEventListener("keydown", handleEscapeKey)
+      // Focus the close button when modal opens for accessibility
+      setTimeout(() => {
+        closeButtonRef.current?.focus()
+      }, 100)
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscapeKey)
+    }
+  }, [selectedExperience])
+
+  // Intersection Observer for individual card animations
+  // Observes each card and triggers visibility state when it enters viewport
   useEffect(() => {
     const cardRefs = document.querySelectorAll("[data-experience-card]")
 
     const cardObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = Number(entry.target.getAttribute("data-card-index"))
-            setCardVisibility((prev) => {
-              const newState = [...prev]
-              newState[index] = true
-              return newState
-            })
-          }
+          const index = Number(entry.target.getAttribute("data-card-index"))
+          setCardVisibility((prev) => {
+            const newState = [...prev]
+            newState[index] = entry.isIntersecting
+            return newState
+          })
         })
       },
       { threshold: 0.15 },
@@ -176,13 +160,13 @@ export function ExperienceSection() {
     return () => {
       cardRefs.forEach((card) => cardObserver.unobserve(card))
     }
-  }, [])
+  }, [experiences.length]) // Re-run if number of experiences changes
 
   return (
     <section
       id="experience"
       ref={sectionRef}
-      className="min-h-screen flex items-center justify-center py-20 px-4 relative"
+      className="min-h-[auto] md:min-h-screen flex items-center justify-center py-12 md:py-20 px-4 relative"
     >
       <div className="absolute inset-0">
         <div
@@ -201,7 +185,7 @@ export function ExperienceSection() {
 
       <div className="max-w-7xl w-full relative z-10">
         <h2
-          className={`text-4xl md:text-6xl font-bold mb-16 text-center transition-all duration-700 ease-out ${
+          className={`text-3xl md:text-6xl font-bold mb-8 md:mb-16 text-center transition-all duration-700 ease-out ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
           style={{
@@ -211,16 +195,18 @@ export function ExperienceSection() {
           <span className="text-white">Experience</span>
         </h2>
 
-        <div className="hidden md:flex justify-between items-start max-w-6xl mx-auto mb-8 px-4">
+        {/* Category headers - responsive for both mobile and desktop */}
+        <div className="flex justify-between items-start max-w-6xl mx-auto mb-4 md:mb-8 px-2 md:px-4">
           <div
             className={`w-[45%] text-center transition-all duration-700 ease-out ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
             }`}
           >
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-white/20 backdrop-blur-[2px] bg-white/5">
-              <Briefcase className="w-5 h-5 text-green-300" />
-              <h3 className="text-xl font-bold text-white" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9)" }}>
-                Work Experience
+            <div className="group/icon inline-flex items-center gap-1 md:gap-2 px-2 py-1.5 md:px-6 md:py-3 rounded-lg md:rounded-xl border md:border-2 border-white/20 backdrop-blur-[2px] bg-white/5">
+              <Briefcase className="w-3 h-3 md:w-5 md:h-5 text-green-300 transition-transform duration-200 group-hover/icon:scale-115 group-hover/icon:rotate-12" />
+              <h3 className="text-xs md:text-xl font-bold text-white" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9)" }}>
+                <span className="hidden md:inline">Work Experience</span>
+                <span className="md:hidden">Work</span>
               </h3>
             </div>
           </div>
@@ -229,35 +215,35 @@ export function ExperienceSection() {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
             }`}
           >
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-white/20 backdrop-blur-[2px] bg-white/5">
-              <GraduationCap className="w-5 h-5 text-blue-300" />
-              <h3 className="text-xl font-bold text-white" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9)" }}>
-                Education
+            <div className="group/icon inline-flex items-center gap-1 md:gap-2 px-2 py-1.5 md:px-6 md:py-3 rounded-lg md:rounded-xl border md:border-2 border-white/20 backdrop-blur-[2px] bg-white/5">
+              <GraduationCap className="w-3 h-3 md:w-5 md:h-5 text-blue-300 transition-transform duration-200 group-hover/icon:scale-115 group-hover/icon:rotate-12" />
+              <h3 className="text-xs md:text-xl font-bold text-white" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9)" }}>
+                <span className="hidden md:inline">Education</span>
+                <span className="md:hidden">Education</span>
               </h3>
             </div>
           </div>
         </div>
 
         <div className="relative max-w-6xl mx-auto">
-          {/* Central vertical line connector */}
+          {/* Central vertical line connector - same for mobile and desktop */}
           <div
-            className={`hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-white/10 via-white/30 to-white/10 -translate-x-1/2 transition-all duration-1000 ease-out ${
+            className={`absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-white/10 via-white/30 to-white/10 -translate-x-1/2 transition-all duration-1000 ease-out ${
               isVisible ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0"
             }`}
             style={{ transformOrigin: "top" }}
           />
 
-          <div className="relative space-y-4">
+          <div className="relative space-y-4 md:space-y-8">
             {experiences.map((experience, index) => {
               const isLeft = experience.side === "left"
-              const needsUpwardShift = index === 1 || index === 2
 
               return (
                 <div
                   key={experience.id}
                   data-experience-card
                   data-card-index={index}
-                  className={`relative ${isLeft ? "md:pr-[52%]" : "md:pl-[52%]"} ${needsUpwardShift ? "md:-mt-32" : ""}`}
+                  className={`relative ${isLeft ? "pr-[52%]" : "pl-[52%]"}`}
                 >
                   {/* Timeline Item */}
                   <div
@@ -269,29 +255,29 @@ export function ExperienceSection() {
                   >
                     <button
                       onClick={() => setSelectedExperience(experience)}
-                      className="w-full text-left border-2 border-white/20 backdrop-blur-[2px] bg-white/5 rounded-xl p-4 md:p-5 transition-all duration-200 hover:border-white/30 hover:bg-white/8 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(255,255,255,0.15)] relative overflow-hidden"
+                      className="group/card w-full text-left border border-white/20 md:border-2 backdrop-blur-[2px] bg-white/5 rounded-lg md:rounded-xl p-2 md:p-5 transition-all duration-200 hover:border-white/30 hover:bg-white/8 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(255,255,255,0.15)] relative overflow-hidden"
                     >
-                      {/* Glass corner highlights */}
+                      {/* Glass corner highlights - hidden on mobile for cleaner look */}
                       <div
-                        className="absolute top-0 left-4 w-[50px] h-[1px] pointer-events-none z-[11]"
+                        className="hidden md:block absolute top-0 left-4 w-[50px] h-[1px] pointer-events-none z-[11]"
                         style={{
                           background: "linear-gradient(to right, transparent, rgba(255,255,255,0.6), transparent)",
                         }}
                       />
                       <div
-                        className="absolute top-0 right-4 w-[50px] h-[1px] pointer-events-none z-[11]"
+                        className="hidden md:block absolute top-0 right-4 w-[50px] h-[1px] pointer-events-none z-[11]"
                         style={{
                           background: "linear-gradient(to right, transparent, rgba(255,255,255,0.6), transparent)",
                         }}
                       />
                       <div
-                        className="absolute bottom-0 left-4 w-[50px] h-[1px] pointer-events-none z-[11]"
+                        className="hidden md:block absolute bottom-0 left-4 w-[50px] h-[1px] pointer-events-none z-[11]"
                         style={{
                           background: "linear-gradient(to right, transparent, rgba(255,255,255,0.6), transparent)",
                         }}
                       />
                       <div
-                        className="absolute bottom-0 right-4 w-[50px] h-[1px] pointer-events-none z-[11]"
+                        className="hidden md:block absolute bottom-0 right-4 w-[50px] h-[1px] pointer-events-none z-[11]"
                         style={{
                           background: "linear-gradient(to right, transparent, rgba(255,255,255,0.6), transparent)",
                         }}
@@ -313,60 +299,62 @@ export function ExperienceSection() {
                       />
 
                       <div className="relative z-20">
-                        <div className="flex items-start justify-between gap-3 mb-2">
-                          <div className="flex-1">
+                        <div className="flex items-start justify-between gap-1 md:gap-3 mb-1 md:mb-2">
+                          <div className="flex-1 min-w-0">
                             <h3
-                              className="text-lg md:text-xl font-bold text-white mb-1"
+                              className="text-sm md:text-xl font-bold text-white mb-0.5 md:mb-1 truncate"
                               style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9)" }}
                             >
                               {experience.title}
                             </h3>
                             <p
-                              className="text-slate-200 text-sm font-medium"
+                              className="text-slate-200 text-xs md:text-sm font-medium truncate"
                               style={{ textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}
                             >
                               {experience.organization}
                             </p>
                           </div>
                           <div
-                            className={`p-2 rounded-lg ${
+                            className={`p-1 md:p-2 rounded-md md:rounded-lg flex-shrink-0 ${
                               experience.type === "education"
                                 ? "bg-blue-500/20 text-blue-300"
                                 : "bg-green-500/20 text-green-300"
                             }`}
                           >
                             {experience.type === "education" ? (
-                              <GraduationCap className="w-5 h-5" />
+                              <GraduationCap className="w-3 h-3 md:w-5 md:h-5 transition-transform duration-200 group-hover/card:scale-115 group-hover/card:rotate-12" />
                             ) : (
-                              <Briefcase className="w-5 h-5" />
+                              <Briefcase className="w-3 h-3 md:w-5 md:h-5 transition-transform duration-200 group-hover/card:scale-115 group-hover/card:rotate-12" />
                             )}
                           </div>
                         </div>
 
                         <p
-                          className="text-slate-300 text-xs font-mono mb-2"
+                          className="text-slate-300 text-[10px] md:text-xs font-mono mb-1 md:mb-2"
                           style={{ textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}
                         >
                           {experience.period}
                         </p>
 
                         <p
-                          className="text-slate-300 text-sm leading-relaxed line-clamp-2"
+                          className="text-slate-300 text-xs md:text-sm leading-relaxed line-clamp-2 hidden md:block"
                           style={{ textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}
                         >
                           {experience.description}
                         </p>
 
                         <span
-                          className="inline-block mt-3 text-xs text-white/70 hover:text-white"
+                          className="inline-block mt-1 md:mt-3 text-[10px] md:text-xs text-white/70 hover:text-white hover:underline cursor-pointer"
                           style={{ textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}
                         >
-                          Click for details →
+                          <span className="hidden md:inline">Click for details →</span>
+                          <span className="md:hidden">Tap →</span>
                         </span>
                       </div>
                     </button>
 
-                    <div className="hidden md:block">
+                    {/* Timeline connector - same for mobile and desktop */}
+                    <div>
                       {/* Horizontal line from card edge to center line */}
                       <div
                         className={`absolute top-1/2 -translate-y-1/2 h-0.5 transition-all duration-500 ease-out ${
@@ -377,22 +365,25 @@ export function ExperienceSection() {
                             : "right-full bg-gradient-to-l from-white/40 to-white/20 origin-right"
                         }`}
                         style={{
-                          width: "calc(50% + 2.5rem)",
+                          width: "calc(2% + 0.5rem)",
                           transform: `translateY(-50%) ${cardVisibility[index] ? "scaleX(1)" : "scaleX(0)"}`,
                           transitionDelay: `${200}ms`,
                         }}
                       />
                       {/* Dot on center line */}
                       <div
-                        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-400 ease-out ${
+                        className={`absolute top-1/2 -translate-y-1/2 transition-all duration-400 ease-out ${
                           cardVisibility[index] ? "opacity-100 scale-100" : "opacity-0 scale-0"
+                        } ${
+                          isLeft ? "left-full" : "right-full"
                         }`}
                         style={{
+                          [isLeft ? "marginLeft" : "marginRight"]: "calc(2% + 0.5rem)",
                           transitionDelay: `${300}ms`,
                         }}
                       >
                         <div
-                          className="w-3 h-3 rounded-full bg-white border-2 border-white/60 relative"
+                          className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-white border md:border-2 border-white/60 relative"
                           style={{
                             boxShadow:
                               "0 0 10px rgba(255,255,255,0.4), 0 0 20px rgba(255,255,255,0.15), inset 0 0 5px rgba(255,255,255,0.5)",
@@ -410,8 +401,13 @@ export function ExperienceSection() {
 
       {selectedExperience && (
         <div
-          className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 animate-in fade-in duration-200"
+          className="fixed inset-0 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200"
+          style={{ background: "linear-gradient(135deg, rgba(0,0,0,0.82) 0%, rgba(15,10,30,0.78) 50%, rgba(0,0,0,0.82) 100%)" }}
           onClick={() => setSelectedExperience(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+          aria-describedby="modal-description"
         >
           <div
             className="relative max-w-2xl w-full max-h-[80vh] overflow-hidden border-2 border-white/20 backdrop-blur-[2px] bg-white/5 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] animate-in zoom-in-95 duration-200 slide-in-from-bottom-4"
@@ -460,66 +456,69 @@ export function ExperienceSection() {
 
             {/* Close button */}
             <button
+              ref={closeButtonRef}
               onClick={() => setSelectedExperience(null)}
-              className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-30"
+              className="group/icon absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-30"
+              aria-label="Close modal"
             >
-              <X className="w-5 h-5 text-white" />
+              <X className="w-5 h-5 text-white transition-transform duration-200 group-hover/icon:scale-115 group-hover/icon:rotate-12" />
             </button>
 
             {/* Content */}
-            <div className="relative z-20 p-6 md:p-8 overflow-y-auto max-h-[80vh]">
-              <div className="flex items-start gap-4 mb-4">
+            <div className="relative z-20 p-4 md:p-8 overflow-y-auto max-h-[80vh]">
+              <div className="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
                 <div
-                  className={`p-3 rounded-xl ${
+                  className={`group/icon p-2 md:p-3 rounded-lg md:rounded-xl ${
                     selectedExperience.type === "education"
                       ? "bg-blue-500/20 text-blue-300"
                       : "bg-green-500/20 text-green-300"
                   }`}
                 >
                   {selectedExperience.type === "education" ? (
-                    <GraduationCap className="w-6 h-6" />
+                    <GraduationCap className="w-4 h-4 md:w-6 md:h-6 transition-transform duration-200 group-hover/icon:scale-115 group-hover/icon:rotate-12" />
                   ) : (
-                    <Briefcase className="w-6 h-6" />
+                    <Briefcase className="w-4 h-4 md:w-6 md:h-6 transition-transform duration-200 group-hover/icon:scale-115 group-hover/icon:rotate-12" />
                   )}
                 </div>
                 <div className="flex-1">
                   <h3
-                    className="text-2xl md:text-3xl font-bold text-white mb-2"
+                    id="modal-title"
+                    className="text-lg md:text-3xl font-bold text-white mb-1 md:mb-2"
                     style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9)" }}
                   >
                     {selectedExperience.title}
                   </h3>
                   <p
-                    className="text-slate-200 text-lg font-medium mb-1"
+                    className="text-slate-200 text-sm md:text-lg font-medium mb-0.5 md:mb-1"
                     style={{ textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}
                   >
                     {selectedExperience.organization}
                   </p>
-                  <p className="text-slate-300 text-sm font-mono" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}>
+                  <p className="text-slate-300 text-xs md:text-sm font-mono" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}>
                     {selectedExperience.period}
                   </p>
                 </div>
               </div>
 
-              <p className="text-slate-300 leading-relaxed mb-6" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}>
+              <p id="modal-description" className="text-slate-300 text-sm md:text-base leading-relaxed mb-4 md:mb-6" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}>
                 {selectedExperience.description}
               </p>
 
-              <div className="border-t border-white/10 pt-6">
+              <div className="border-t border-white/10 pt-4 md:pt-6">
                 <h4
-                  className="text-lg font-semibold text-white mb-4"
+                  className="text-sm md:text-lg font-semibold text-white mb-3 md:mb-4"
                   style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9)" }}
                 >
                   Key Highlights
                 </h4>
-                <ul className="space-y-3">
+                <ul className="space-y-2 md:space-y-3">
                   {selectedExperience.details.map((detail, idx) => (
                     <li
                       key={idx}
-                      className="text-slate-300 leading-relaxed flex gap-3"
+                      className="text-slate-300 text-xs md:text-base leading-relaxed flex gap-2 md:gap-3"
                       style={{ textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}
                     >
-                      <span className="text-white/50 mt-1">•</span>
+                      <span className="text-white/50 mt-0.5 md:mt-1 flex-shrink-0">•</span>
                       <span>{detail}</span>
                     </li>
                   ))}
