@@ -285,14 +285,14 @@ export function ExperienceSection() {
 
                       {/* Glass shine layers */}
                       <div
-                        className="absolute inset-0 pointer-events-none z-10 rounded-xl"
+                        className="absolute inset-0 pointer-events-none z-10 rounded-lg md:rounded-xl"
                         style={{
                           boxShadow:
                             "inset 2px 2px 3px 0px rgba(255, 255, 255, 0.3), inset -2px -2px 3px 0px rgba(255,255,255,0.2)",
                         }}
                       />
                       <div
-                        className="absolute inset-0 pointer-events-none z-10 opacity-60 rounded-xl"
+                        className="absolute inset-0 pointer-events-none z-10 opacity-60 rounded-lg md:rounded-xl"
                         style={{
                           boxShadow: "inset 1px 1px 2px 0px rgba(255,255,255,0.5)",
                         }}

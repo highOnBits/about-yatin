@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, useCallback, type ReactNode } from "react"
+import { useState, useRef, useCallback, useEffect, type ReactNode } from "react"
 
 interface MobileCarouselProps {
   children: ReactNode[]
@@ -9,11 +9,15 @@ interface MobileCarouselProps {
 
 export function MobileCarousel({ children, className = "" }: MobileCarouselProps) {
   const [current, setCurrent] = useState(0)
-  const touchStartX = useRef(0)
-  const touchDeltaX = useRef(0)
   const [dragging, setDragging] = useState(false)
   const [dragOffset, setDragOffset] = useState(0)
   const total = children.length
+
+  const containerRef = useRef<HTMLDivElement>(null)
+  const touchStartX = useRef(0)
+  const touchStartY = useRef(0)
+  const touchDeltaX = useRef(0)
+  const directionLocked = useRef<"horizontal" | "vertical" | null>(null)
 
   const goTo = useCallback(
     (idx: number) => {
@@ -23,38 +27,64 @@ export function MobileCarousel({ children, className = "" }: MobileCarouselProps
     [total],
   )
 
-  const handleTouchStart = (e: React.TouchEvent) => {
+  const handleTouchStart = useCallback((e: TouchEvent) => {
     touchStartX.current = e.touches[0].clientX
+    touchStartY.current = e.touches[0].clientY
     touchDeltaX.current = 0
+    directionLocked.current = null
     setDragging(true)
-  }
+  }, [])
 
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!dragging) return
-    touchDeltaX.current = e.touches[0].clientX - touchStartX.current
-    setDragOffset(touchDeltaX.current)
-  }
+  const handleTouchMove = useCallback((e: TouchEvent) => {
+    const dx = e.touches[0].clientX - touchStartX.current
+    const dy = e.touches[0].clientY - touchStartY.current
 
-  const handleTouchEnd = () => {
+    if (!directionLocked.current) {
+      if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return
+      directionLocked.current = Math.abs(dx) > Math.abs(dy) ? "horizontal" : "vertical"
+    }
+
+    if (directionLocked.current === "vertical") return
+
+    e.preventDefault()
+    touchDeltaX.current = dx
+    setDragOffset(dx)
+  }, [])
+
+  const handleTouchEnd = useCallback(() => {
     setDragging(false)
-    const threshold = 60
-    if (touchDeltaX.current < -threshold && current < total - 1) {
+    if (directionLocked.current !== "horizontal") {
+      setDragOffset(0)
+      return
+    }
+    const threshold = 50
+    if (touchDeltaX.current < -threshold) {
       goTo(current + 1)
-    } else if (touchDeltaX.current > threshold && current > 0) {
+    } else if (touchDeltaX.current > threshold) {
       goTo(current - 1)
     } else {
       setDragOffset(0)
     }
-  }
+  }, [current, goTo])
+
+  useEffect(() => {
+    const el = containerRef.current
+    if (!el) return
+
+    el.addEventListener("touchstart", handleTouchStart, { passive: true })
+    el.addEventListener("touchmove", handleTouchMove, { passive: false })
+    el.addEventListener("touchend", handleTouchEnd, { passive: true })
+
+    return () => {
+      el.removeEventListener("touchstart", handleTouchStart)
+      el.removeEventListener("touchmove", handleTouchMove)
+      el.removeEventListener("touchend", handleTouchEnd)
+    }
+  }, [handleTouchStart, handleTouchMove, handleTouchEnd])
 
   return (
     <div className={`md:hidden ${className}`}>
-      <div
-        className="relative overflow-hidden"
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
+      <div ref={containerRef} className="relative overflow-hidden">
         <div
           className="flex"
           style={{
@@ -70,7 +100,6 @@ export function MobileCarousel({ children, className = "" }: MobileCarouselProps
         </div>
       </div>
 
-      {/* Dot indicators */}
       <div className="flex justify-center gap-2 mt-4">
         {Array.from({ length: total }).map((_, i) => (
           <button
